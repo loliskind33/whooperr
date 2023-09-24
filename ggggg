@@ -1,0 +1,535 @@
+
+-- Created with iiX0Lord's ITS
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+
+SkeletonScythe0 = Instance.new("Tool")
+SkeletonScythe0.Name = "SkeletonScythe"
+SkeletonScythe0.Parent = game.Players.LocalPlayer.Backpack
+SkeletonScythe0.TextureId = "http://www.roblox.com/asset/?id=95891250"
+SkeletonScythe0.Grip = CFrame.new(0.939999998, -4.69999981, -0.159999996, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+SkeletonScythe0.GripForward = Vector3.new(-1, 0, -0)
+SkeletonScythe0.GripPos = Vector3.new(0.9399999976158142, -4.699999809265137, -0.1599999964237213)
+SkeletonScythe0.GripRight = Vector3.new(0, 0, -1)
+SkeletonScythe0.ToolTip = "Rise from your grave!"
+
+
+Handle1 = Instance.new("Part")
+Handle1.Name = "Handle"
+Handle1.Parent = SkeletonScythe0
+Handle1.CFrame = CFrame.new(-10.2299995, 19.8099995, 18.5299988, 0.706535816, 0.707675636, 1.22367703e-06, -0.707675874, 0.706535578, 0.000124918923, 8.76825943e-05, -8.85695044e-05, 0.999999285)
+Handle1.Orientation = Vector3.new(-0.007000000216066837, 0, -45.04600143432617)
+Handle1.Position = Vector3.new(-10.229999542236328, 19.809999465942383, 18.529998779296875)
+Handle1.Rotation = Vector3.new(-0.007000000216066837, 0, -45.04600143432617)
+Handle1.Size = Vector3.new(4.599997043609619, 2.200000286102295, 0.5000003576278687)
+Handle1.BottomSurface = Enum.SurfaceType.Smooth
+Handle1.Locked = true
+Handle1.TopSurface = Enum.SurfaceType.Smooth
+Handle1.FormFactor = Enum.FormFactor.Custom
+Handle1.formFactor = Enum.FormFactor.Custom
+
+Mesh2 = Instance.new("SpecialMesh")
+Mesh2.Parent = Handle1
+Mesh2.MeshId = "http://www.roblox.com/asset/?id=95891318"
+Mesh2.Scale = Vector3.new(0.800000011920929, 0.800000011920929, 0.800000011920929)
+Mesh2.TextureId = "http://www.roblox.com/asset/?id=95891299"
+Mesh2.MeshType = Enum.MeshType.FileMesh
+
+SwordSlash3 = Instance.new("Sound")
+SwordSlash3.Name = "SwordSlash"
+SwordSlash3.Parent = Handle1
+SwordSlash3.SoundId = "rbxasset://sounds//swordslash.wav"
+SwordSlash3.Volume = 1
+
+Gong4 = Instance.new("Sound")
+Gong4.Name = "Gong"
+Gong4.Parent = Handle1
+Gong4.SoundId = "http://www.roblox.com/asset/?id=96098241"
+Gong4.Volume = 1
+
+RightGripAttachment5 = Instance.new("Attachment")
+RightGripAttachment5.Name = "RightGripAttachment"
+RightGripAttachment5.Parent = Handle1
+RightGripAttachment5.Axis = Vector3.new(0, 0, -1)
+RightGripAttachment5.CFrame = CFrame.new(0.939999998, -4.69999981, -0.159999996, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+RightGripAttachment5.Orientation = Vector3.new(0, 90, 0)
+RightGripAttachment5.Position = Vector3.new(0.9399999976158142, -4.699999809265137, -0.1599999964237213)
+RightGripAttachment5.Rotation = Vector3.new(0, 90, 0)
+RightGripAttachment5.WorldAxis = Vector3.new(-0.0000012236770317031187, -0.00012491892266552895, -0.9999992847442627)
+RightGripAttachment5.WorldCFrame = CFrame.new(-12.8919315, 15.8240471, 18.3704967, -1.22367703e-06, 0.707675636, 0.706535816, -0.000124918923, 0.706535578, -0.707675874, -0.999999285, -8.85695044e-05, 8.76825943e-05)
+RightGripAttachment5.WorldOrientation = Vector3.new(45.04607391357422, 89.9928970336914, -0.010130170732736588)
+RightGripAttachment5.WorldPosition = Vector3.new(-12.891931533813477, 15.824047088623047, 18.37049674987793)
+RightGripAttachment5.WorldSecondaryAxis = Vector3.new(0.7076756358146667, 0.7065355777740479, -0.00008856950444169343)
+
+FireParticle6 = Instance.new("Attachment")
+FireParticle6.Name = "FireParticle"
+FireParticle6.Parent = Handle1
+FireParticle6.Axis = Vector3.new(0.17364828288555145, 0.9848077297210693, 1.2385628167521645e-07)
+FireParticle6.CFrame = CFrame.new(1.19999886, 9.66434527e-07, 3.25011797e-06, 0.173648283, -0.984807789, -4.50168955e-07, 0.98480773, 0.173648298, -4.63899994e-08, 1.23856282e-07, -4.3527433e-07, 1)
+FireParticle6.Orientation = Vector3.new(0.000002657951199580566, -0.00002579278043413069, 79.99998474121094)
+FireParticle6.Position = Vector3.new(1.1999988555908203, 9.664345270721242e-07, 0.0000032501179703103844)
+FireParticle6.Rotation = Vector3.new(0.000002657951199580566, -0.00002579278043413069, 80)
+FireParticle6.SecondaryAxis = Vector3.new(-0.9848077893257141, 0.17364829778671265, -4.3527433035706053e-07)
+FireParticle6.WorldAxis = Vector3.new(0.8196131587028503, 0.5729149580001831, -0.00007187414303189144)
+FireParticle6.WorldCFrame = CFrame.new(-9.38215637, 18.9607906, 18.5301075, 0.819613159, -0.572915316, 8.72787496e-07, 0.572914958, 0.819613397, 0.000125204722, -7.1874143e-05, -0.000102165723, 0.999999285)
+FireParticle6.WorldOrientation = Vector3.new(-0.007157054264098406, 0.000021585765352938324, 34.953792572021484)
+FireParticle6.WorldPosition = Vector3.new(-9.382156372070312, 18.960790634155273, 18.530107498168945)
+FireParticle6.WorldSecondaryAxis = Vector3.new(-0.5729153156280518, 0.8196133971214294, -0.00010216572263743728)
+
+FireLight7 = Instance.new("PointLight")
+FireLight7.Name = "FireLight"
+FireLight7.Parent = FireParticle6
+FireLight7.Color = Color3.new(1, 0.333333, 0)
+FireLight7.Range = 6
+FireLight7.Shadows = true
+
+Fire_Effect8 = Instance.new("Script")
+Fire_Effect8.Name = "Fire_Effect"
+Fire_Effect8.Parent = FireLight7
+table.insert(cors,sandbox(Fire_Effect8,function()
+local Fire = script.Parent
+local Rate = 1/1000
+
+
+while Fire do
+	for i=1,3,1 do
+		script.Parent.Range = script.Parent.Range + 1
+		wait(Rate)
+	end
+	for i=1,2,1 do
+		script.Parent.Range = script.Parent.Range - 1
+		wait(Rate)
+	end
+	for i=1,1,1 do
+		script.Parent.Range = script.Parent.Range + 1
+		wait(Rate)
+	end
+	for i=1,2,1 do
+		script.Parent.Range = script.Parent.Range - 1
+		wait(Rate)
+	end
+end
+end))
+
+Fire9 = Instance.new("ParticleEmitter")
+Fire9.Name = "Fire"
+Fire9.Parent = FireParticle6
+Fire9.Speed = NumberRange.new(7, 9)
+Fire9.Rotation = NumberRange.new(4, 9)
+Fire9.Color = ColorSequence.new(Color3.new(1, 0.333333, 0),Color3.new(1, 0, 0),Color3.new(0.364706, 0, 0))
+Fire9.LightEmission = 0.8600000143051147
+Fire9.Texture = "http://www.roblox.com/asset/?id=248625108"
+Fire9.Transparency = NumberSequence.new(0,0.543749988079071,0.737500011920929,0,0.7250000238418579,0.45625001192092896,0.637499988079071,0,0.5249999761581421,0)
+Fire9.Size = NumberSequence.new(1.625,1.5,1.4375,1.3125,1.3125,1.25,0.875,0.4375,0.125)
+Fire9.Acceleration = Vector3.new(8, 6, 6)
+Fire9.Lifetime = NumberRange.new(0, 1)
+Fire9.Rate = 70
+Fire9.RotSpeed = NumberRange.new(5, 9)
+Fire9.SpreadAngle = Vector2.new(28, 28)
+Fire9.VelocitySpread = 28
+
+ScytheScript10 = Instance.new("Script")
+ScytheScript10.Name = "ScytheScript"
+ScytheScript10.Parent = SkeletonScythe0
+table.insert(cors,sandbox(ScytheScript10,function()
+-----------------
+--| Constants |--
+-----------------
+
+local HIT_DAMAGE = 20
+local LIMB_DEBRIS_TIME = 4 --NOTE: Should be less than respawn time
+
+local SLASH_COOLDOWN = 0.7
+
+local IGNORE_LIST = {torso = 1, handle = 1, effect = 1, water = 1} --NOTE: Keys must be lowercase, values must evaluate to true
+
+-----------------
+--| Variables |--
+-----------------
+
+local DebrisService = game:GetService('Debris')
+local PlayersService = game:GetService('Players')
+
+local Tool = script.Parent
+local ToolHandle = Tool.Handle
+
+local MyModel = nil
+local MyPlayer = nil
+
+-------------------------
+--| Utility Functions |--
+-------------------------
+
+-- Returns a character ancestor and its Humanoid, or nil
+local function FindCharacterAncestor(subject)
+	if subject and subject ~= workspace then
+		local humanoid = subject:FindFirstChild('Humanoid')
+		if humanoid then
+			return subject, humanoid
+		else
+			return FindCharacterAncestor(subject.Parent)
+		end
+	end
+	return nil
+end
+
+function IsTeamMate(Player1, Player2)
+	return (Player1 and Player2 and not Player1.Neutral and not Player2.Neutral and Player1.TeamColor == Player2.TeamColor)
+end
+
+-- Removes any old creator tags and applies new ones to the specified target
+local function ApplyTags(target)
+	while target:FindFirstChild('creator') do
+		target.creator:Destroy()
+	end
+
+	local creatorTag = Instance.new('ObjectValue')
+	creatorTag.Value = MyPlayer
+	creatorTag.Name = 'creator' --NOTE: Must be called 'creator' for website stats
+
+	local iconTag = Instance.new('StringValue')
+	iconTag.Value = Tool.TextureId
+	iconTag.Name = 'icon'
+
+	iconTag.Parent = creatorTag
+	creatorTag.Parent = target
+	DebrisService:AddItem(creatorTag, 4)
+end
+
+-----------------------
+--| Other Functions |--
+-----------------------
+
+local function OnTouched(otherPart)
+	if otherPart and not IGNORE_LIST[string.lower(otherPart.Name)] then
+		local character, humanoid = FindCharacterAncestor(otherPart)
+		if character and humanoid and character ~= MyModel and not IsTeamMate(MyPlayer,PlayersService:GetPlayerFromCharacter(character)) then
+			local FF = humanoid.Parent:FindFirstChildOfClass("ForceField")
+			if FF then return end
+			ApplyTags(humanoid)
+			humanoid:TakeDamage(HIT_DAMAGE)
+			if humanoid.Health > 0 and humanoid.RootPart then -- Cut limbs
+				for _, child in pairs(character:GetDescendants()) do
+					if child:IsA('JointInstance') and (child.Part0 == otherPart or child.Part1 == otherPart) then
+						child:Destroy()
+						DebrisService:AddItem(otherPart, LIMB_DEBRIS_TIME)
+						otherPart.Parent = workspace
+						otherPart.CanCollide = true
+					end
+				end
+			end
+		end
+	end
+end
+
+local function OnEquipped()
+	MyModel = Tool.Parent
+	MyPlayer = PlayersService:GetPlayerFromCharacter(MyModel)
+end
+
+local function OnActivated()
+	if Tool.Enabled and MyModel:FindFirstChildOfClass('Humanoid') and MyModel.Humanoid.Health > 0 then
+		Tool.Enabled = false --NOTE: Starts the animation
+
+		local connection = ToolHandle.Touched:Connect(OnTouched)
+		delay(0.4, function() --NOTE: Hardcoded length of animation :[
+			if connection then
+				connection:Disconnect()
+			end
+		end)
+
+		local slashSound = ToolHandle:FindFirstChild('SwordSlash')
+		if slashSound then
+			slashSound:Play()
+		end
+
+		wait(SLASH_COOLDOWN)
+
+		Tool.Enabled = true
+	end
+end
+
+--------------------
+--| Script Logic |--
+--------------------
+
+Tool.Equipped:Connect(OnEquipped)
+Tool.Activated:Connect(OnActivated)
+
+end))
+
+MostAnimations11 = Instance.new("LocalScript")
+MostAnimations11.Name = "MostAnimations"
+MostAnimations11.Parent = SkeletonScythe0
+table.insert(cors,sandbox(MostAnimations11,function()
+-----------------
+--| Variables |--
+-----------------
+
+local Tool = script.Parent
+local R6Folder = script:WaitForChild("R6")
+local R15Folder = script:WaitForChild("R15")
+
+local ScytheEquipAnimation = R6Folder:WaitForChild("ScytheEquip2")
+local ScytheIdleAnimation = R6Folder:WaitForChild("ScytheIdle2")
+local ScytheSlashAnimation = R6Folder:WaitForChild("ScytheSlash")
+
+local ScytheEquipTrack = nil
+local ScytheIdleTrack = nil
+local ScytheSlashTrack = nil
+
+-----------------
+--| Functions |--
+-----------------
+
+local function OnEquipped()
+	local myModel = Tool.Parent
+	local humanoid = myModel:FindFirstChild('Humanoid')
+	if humanoid then -- Preload animations
+		if humanoid.RigType == Enum.HumanoidRigType.R15 then
+			ScytheEquipAnimation = R15Folder:WaitForChild("ScytheEquip2")
+			ScytheIdleAnimation = R15Folder:WaitForChild("ScytheIdle2")
+			ScytheSlashAnimation = R15Folder:WaitForChild("ScytheSlash")
+		else
+			ScytheEquipAnimation = R6Folder:WaitForChild("ScytheEquip2")
+			ScytheIdleAnimation = R6Folder:WaitForChild("ScytheIdle2")
+			ScytheSlashAnimation = R6Folder:WaitForChild("ScytheSlash")
+		end
+		
+		ScytheEquipTrack = humanoid:LoadAnimation(ScytheEquipAnimation)
+		if ScytheEquipTrack then ScytheEquipTrack:Play() end
+
+		ScytheIdleTrack = humanoid:LoadAnimation(ScytheIdleAnimation)
+		if ScytheIdleTrack then ScytheIdleTrack:Play() end
+
+		ScytheSlashTrack = humanoid:LoadAnimation(ScytheSlashAnimation)
+	end
+end
+
+Tool:GetPropertyChangedSignal("Enabled"):Connect(function()
+	if Tool.Enabled == false then
+		if ScytheSlashTrack then
+			ScytheSlashTrack:Play()
+		end
+	end
+end)
+
+local function OnUnequipped()
+	-- Stop all animations
+	if ScytheEquipTrack then ScytheEquipTrack:Stop() end
+	if ScytheIdleTrack then ScytheIdleTrack:Stop() end
+	if ScytheSlashTrack then ScytheSlashTrack:Stop() end
+end
+
+--------------------
+--| Script Logic |--
+--------------------
+
+Tool.Equipped:Connect(OnEquipped)
+Tool.Unequipped:Connect(OnUnequipped)
+
+end))
+
+ScytheEquip212 = Instance.new("Animation")
+ScytheEquip212.Name = "ScytheEquip2"
+ScytheEquip212.Parent = MostAnimations11
+ScytheEquip212.AnimationId = "http://www.roblox.com/Asset?ID=96064636"
+
+ScytheIdle213 = Instance.new("Animation")
+ScytheIdle213.Name = "ScytheIdle2"
+ScytheIdle213.Parent = MostAnimations11
+ScytheIdle213.AnimationId = "http://www.roblox.com/Asset?ID=96065457"
+
+ScytheSlash14 = Instance.new("Animation")
+ScytheSlash14.Name = "ScytheSlash"
+ScytheSlash14.Parent = MostAnimations11
+ScytheSlash14.AnimationId = "http://www.roblox.com/Asset?ID=96071496"
+
+R615 = Instance.new("Folder")
+R615.Name = "R6"
+R615.Parent = MostAnimations11
+
+ScytheEquip216 = Instance.new("Animation")
+ScytheEquip216.Name = "ScytheEquip2"
+ScytheEquip216.Parent = R615
+ScytheEquip216.AnimationId = "http://www.roblox.com/Asset?ID=96064636"
+
+ScytheIdle217 = Instance.new("Animation")
+ScytheIdle217.Name = "ScytheIdle2"
+ScytheIdle217.Parent = R615
+ScytheIdle217.AnimationId = "http://www.roblox.com/Asset?ID=96065457"
+
+ScytheSlash18 = Instance.new("Animation")
+ScytheSlash18.Name = "ScytheSlash"
+ScytheSlash18.Parent = R615
+ScytheSlash18.AnimationId = "http://www.roblox.com/Asset?ID=96071496"
+
+R1519 = Instance.new("Folder")
+R1519.Name = "R15"
+R1519.Parent = MostAnimations11
+
+ScytheEquip220 = Instance.new("Animation")
+ScytheEquip220.Name = "ScytheEquip2"
+ScytheEquip220.Parent = R1519
+ScytheEquip220.AnimationId = "rbxassetid://1296863675"
+
+ScytheIdle221 = Instance.new("Animation")
+ScytheIdle221.Name = "ScytheIdle2"
+ScytheIdle221.Parent = R1519
+ScytheIdle221.AnimationId = "rbxassetid://1296867556"
+
+ScytheSlash22 = Instance.new("Animation")
+ScytheSlash22.Name = "ScytheSlash"
+ScytheSlash22.Parent = R1519
+ScytheSlash22.AnimationId = "rbxassetid://1296868982"
+
+LocalRaiseSkeletons23 = Instance.new("LocalScript")
+LocalRaiseSkeletons23.Name = "LocalRaiseSkeletons"
+LocalRaiseSkeletons23.Parent = SkeletonScythe0
+table.insert(cors,sandbox(LocalRaiseSkeletons23,function()
+-----------------
+--| Constants |--
+-----------------
+
+
+-----------------
+--| Variables |--
+-----------------
+
+local DebrisService = game:GetService('Debris')
+local PlayersService = game:GetService('Players')
+local ContextActionService = game:GetService("ContextActionService")
+
+local Tool = script.Parent
+local ToolHandle = Tool.Handle
+local SpawnSkeletonRemote = Tool:WaitForChild("SpawnSkeleton")
+
+local MyPlayer = PlayersService.LocalPlayer
+
+local MyModel = nil
+local Skeleton = nil
+local SummonTrack = nil
+
+-----------------
+--| Functions |--
+-----------------
+
+
+local function SpawnSkeletonKeyBind(ActionName, InputState, InputObject)
+	SpawnSkeletonRemote:FireServer()		
+end 
+
+
+
+local function OnEquipped(mouse)
+	MyModel = Tool.Parent
+
+	local humanoid = MyModel:FindFirstChildOfClass('Humanoid')
+
+	ContextActionService:BindAction("BoundSkeletonArmy", SpawnSkeletonKeyBind, true, Enum.KeyCode.E,Enum.KeyCode.Q,Enum.KeyCode.ButtonY)
+	ContextActionService:SetTitle("BoundSkeletonArmy","Skele Squad")
+	ContextActionService:SetPosition("BoundSkeletonArmy",UDim2.new(.5,0,-.5,0))
+end
+
+local function OnUnequipped()
+	ContextActionService:UnbindAction("BoundSkeletonArmy")
+end
+
+--------------------
+--| Script Logic |--
+--------------------
+
+Tool.Equipped:Connect(OnEquipped)
+Tool.Unequipped:Connect(OnUnequipped)
+
+end))
+
+ThumbnailCamera24 = Instance.new("Camera")
+ThumbnailCamera24.Name = "ThumbnailCamera"
+ThumbnailCamera24.Parent = SkeletonScythe0
+ThumbnailCamera24.CFrame = CFrame.new(-10.896039, 18.2210178, 12.9735661, -0.999449313, -0.00042723029, 0.0331811979, -0, 0.999917269, 0.0128746061, -0.0331839509, 0.0128675159, -0.999366522)
+ThumbnailCamera24.CoordinateFrame = CFrame.new(-10.896039, 18.2210178, 12.9735661, -0.999449313, -0.00042723029, 0.0331811979, -0, 0.999917269, 0.0128746061, -0.0331839509, 0.0128675159, -0.999366522)
+ThumbnailCamera24.Focus = CFrame.new(-10.9624014, 18.1952686, 14.9722986, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ThumbnailCamera24.focus = CFrame.new(-10.9624014, 18.1952686, 14.9722986, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+ThumbnailPose25 = Instance.new("Keyframe")
+ThumbnailPose25.Name = "ThumbnailPose"
+ThumbnailPose25.Parent = SkeletonScythe0
+
+UpperTorso26 = Instance.new("Pose")
+UpperTorso26.Name = "UpperTorso"
+UpperTorso26.Parent = ThumbnailPose25
+UpperTorso26.EasingDirection = Enum.PoseEasingDirection.Out
+UpperTorso26.Weight = 0
+
+RightUpperArm27 = Instance.new("Pose")
+RightUpperArm27.Name = "RightUpperArm"
+RightUpperArm27.Parent = UpperTorso26
+RightUpperArm27.CFrame = CFrame.new(0, -6.70552254e-08, -5.96046448e-08, 1, 0, 0, 0, 0.173648193, -0.98480773, 0, 0.98480773, 0.173648193)
+RightUpperArm27.EasingDirection = Enum.PoseEasingDirection.Out
+
+RightLowerArm28 = Instance.new("Pose")
+RightLowerArm28.Name = "RightLowerArm"
+RightLowerArm28.Parent = RightUpperArm27
+RightLowerArm28.CFrame = CFrame.new(0, -1.49011612e-08, 3.7252903e-09, 1, 0, 0, 0, 0.98480773, -0.173648179, 0, 0.173648179, 0.98480773)
+RightLowerArm28.EasingDirection = Enum.PoseEasingDirection.Out
+
+RightHand29 = Instance.new("Pose")
+RightHand29.Name = "RightHand"
+RightHand29.Parent = RightLowerArm28
+RightHand29.EasingDirection = Enum.PoseEasingDirection.Out
+
+MouseIcon30 = Instance.new("LocalScript")
+MouseIcon30.Name = "MouseIcon"
+MouseIcon30.Parent = SkeletonScythe0
+table.insert(cors,sandbox(MouseIcon30,function()
+--Rescripted by Luckymaxer
+
+Mouse_Icon = "rbxasset://textures/GunCursor.png"
+Reloading_Icon = "rbxasset://textures/GunWaitCursor.png"
+
+Tool = script.Parent
+
+Mouse = nil
+
+function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and Mouse_Icon or Reloading_Icon
+	end
+end
+
+function OnEquipped(ToolMouse)
+	Mouse = ToolMouse
+	UpdateIcon()
+end
+
+function OnChanged(Property)
+	if Property == "Enabled" then
+		UpdateIcon()
+	end
+end
+
+Tool.Equipped:Connect(OnEquipped)
+Tool.Changed:Connect(OnChanged)
+
+end))
+
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
