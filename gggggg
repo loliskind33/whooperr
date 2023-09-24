@@ -1,0 +1,182 @@
+
+-- Created with iiX0Lord's ITS
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+
+FireExtinguisher0 = Instance.new("Tool")
+FireExtinguisher0.Name = "FireExtinguisher"
+FireExtinguisher0.Parent = game.Players.LocalPlayer.Backpack
+FireExtinguisher0.TextureId = "http://www.roblox.com/asset/?id=27787298"
+FireExtinguisher0.Grip = CFrame.new(-0.100000001, 0, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+FireExtinguisher0.GripForward = Vector3.new(1, -0, -0)
+FireExtinguisher0.GripPos = Vector3.new(-0.10000000149011612, 0, 0)
+FireExtinguisher0.GripRight = Vector3.new(0, 0, 1)
+
+Handle1 = Instance.new("Part")
+Handle1.Name = "Handle"
+Handle1.Parent = FireExtinguisher0
+Handle1.CFrame = CFrame.new(1.5, 5.50000906, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+Handle1.Orientation = Vector3.new(0, 90, 0)
+Handle1.Position = Vector3.new(1.5, 5.500009059906006, 0)
+Handle1.Rotation = Vector3.new(0, 90, 0)
+Handle1.Size = Vector3.new(1, 1.2000000476837158, 1)
+Handle1.Locked = true
+
+Mesh2 = Instance.new("SpecialMesh")
+Mesh2.Parent = Handle1
+Mesh2.MeshId = "http://www.roblox.com/asset/?id=27787143"
+Mesh2.TextureId = "http://www.roblox.com/asset/?id=27787168"
+Mesh2.MeshType = Enum.MeshType.FileMesh
+
+FoamSound3 = Instance.new("Sound")
+FoamSound3.Name = "FoamSound"
+FoamSound3.Parent = Handle1
+FoamSound3.Looped = true
+FoamSound3.SoundId = "http://www.roblox.com/asset/?id=27801510"
+
+RightGripAttachment4 = Instance.new("Attachment")
+RightGripAttachment4.Name = "RightGripAttachment"
+RightGripAttachment4.Parent = Handle1
+RightGripAttachment4.Axis = Vector3.new(6.310887241768095e-30, 0, 1)
+RightGripAttachment4.CFrame = CFrame.new(-0.100000024, 0, 0, 6.31088724e-30, 0, -1, 0, 1, 0, 1, 0, 6.31088724e-30)
+RightGripAttachment4.Orientation = Vector3.new(-0, -90, 0)
+RightGripAttachment4.Position = Vector3.new(-0.10000002384185791, 0, 0)
+RightGripAttachment4.Rotation = Vector3.new(-0, -90, 0)
+RightGripAttachment4.WorldAxis = Vector3.new(1, 0, -6.310887241768095e-30)
+RightGripAttachment4.WorldCFrame = CFrame.new(1.5, 5.50000906, 0.100000024, 1, 0, 6.31088724e-30, 0, 1, 0, -6.31088724e-30, 0, 1)
+RightGripAttachment4.WorldOrientation = Vector3.new(0, 3.615871840828815e-28, 0)
+RightGripAttachment4.WorldPosition = Vector3.new(1.5, 5.500009059906006, 0.10000002384185791)
+
+BubbleScript5 = Instance.new("LocalScript")
+BubbleScript5.Name = "BubbleScript"
+BubbleScript5.Parent = FireExtinguisher0
+table.insert(cors,sandbox(BubbleScript5,function()
+local Tool = script.Parent
+local spraying = false
+local torso = nil
+local offset = 5
+local debris = game:GetService("Debris")
+
+local bubble = Instance.new("Part")
+bubble.Shape = 0
+bubble.formFactor = 0
+bubble.Size = Vector3.new(1,1,1)
+bubble.Transparency = 0.2
+bubble.BottomSurface = "Smooth"
+bubble.TopSurface = "Smooth"
+bubble.CanCollide = true
+
+function onEquipped(mouse)
+
+	torso = Tool.Parent:FindFirstChild("Torso", false) or Tool.Parent:FindFirstChild("UpperTorso", false)
+	mouse.Button1Down:connect(onButton1Down)
+	mouse.Button1Up:connect(onButton1Up)
+
+end
+
+function onUnequipped()
+
+	spraying = false
+	Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=27787143"
+	Tool.Handle.FoamSound:Stop()
+
+
+end
+
+function onButton1Down(mouse)
+
+	spraying = true
+	Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=27787226"
+	Tool.Handle.FoamSound:Play()
+	sprayBubbles()
+
+end
+
+function onButton1Up(mouse)
+
+	spraying = false
+	Tool.Handle.Mesh.MeshId = "http://www.roblox.com/asset/?id=27787143"
+	Tool.Handle.FoamSound:Stop()
+
+end
+
+function sprayBubbles()
+
+	while spraying do
+		
+		local sprayDir = torso.CFrame.lookVector.unit
+
+		local bubbleClone = bubble:clone()
+		local torsoNormal = torso.CFrame.lookVector
+		local denom = math.abs(torsoNormal.x) + math.abs(torsoNormal.z)
+		local posX = 5 * (torsoNormal.x/denom)
+		local posZ = 5 * (torsoNormal.z/denom)
+		bubbleClone.Position = Vector3.new(Tool.Handle.Position.x + posX,Tool.Handle.Position.y,Tool.Handle.Position.z + posZ)
+		bubbleClone.Velocity = Vector3.new(sprayDir.x,sprayDir.y + 0.5, sprayDir.z) * 50
+		bubbleClone.Size = Vector3.new(math.random(1,2),math.random(1,2),math.random(1,2))
+		bubbleClone.Parent = game.Workspace
+
+		local script = Tool.ExtinguishScript:clone()
+		script.Parent = bubbleClone
+		script.Disabled = false
+
+		debris:AddItem(bubbleClone, 2)
+		
+		wait(0.05)
+	end
+
+end
+
+Tool.Equipped:connect(onEquipped)
+Tool.Unequipped:connect(onUnequipped)
+
+end))
+
+ExtinguishScript6 = Instance.new("Script")
+ExtinguishScript6.Name = "ExtinguishScript"
+ExtinguishScript6.Parent = FireExtinguisher0
+ExtinguishScript6.Enabled = false
+table.insert(cors,sandbox(ExtinguishScript6,function()
+local bubble = script.Parent
+
+bubble.Touched:connect(function(part)
+	parts = part:GetChildren()
+	for i = 1, #parts do
+		if parts[i].className == "Fire" then
+			parts[i].Enabled = false
+		end
+	end
+	bubble:remove()
+end)
+
+
+end))
+ExtinguishScript6.Disabled = true
+
+ThumbnailCamera7 = Instance.new("Camera")
+ThumbnailCamera7.Name = "ThumbnailCamera"
+ThumbnailCamera7.Parent = FireExtinguisher0
+ThumbnailCamera7.CFrame = CFrame.new(-0.878361404, 6.21358299, 1.00360107, 0.393965989, 0.24255079, -0.88654387, 7.4505806e-09, 0.964552045, 0.263893127, 0.91912508, -0.103964925, 0.380000651)
+ThumbnailCamera7.CoordinateFrame = CFrame.new(-0.878361404, 6.21358299, 1.00360107, 0.393965989, 0.24255079, -0.88654387, 7.4505806e-09, 0.964552045, 0.263893127, 0.91912508, -0.103964925, 0.380000651)
+ThumbnailCamera7.Focus = CFrame.new(0.894726336, 5.68579674, 0.243599772, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ThumbnailCamera7.focus = CFrame.new(0.894726336, 5.68579674, 0.243599772, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
