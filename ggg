@@ -1,0 +1,219 @@
+
+-- Created with iiX0Lord's ITS
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+
+ClassicTimebomb0 = Instance.new("Tool")
+ClassicTimebomb0.Name = "ClassicTimebomb"
+ClassicTimebomb0.Parent = workspace
+ClassicTimebomb0.TextureId = "http://www.roblox.com/asset/?id=12663892360"
+ClassicTimebomb0.Grip = CFrame.new(0, 0, 0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ClassicTimebomb0.GripPos = Vector3.new(0, 0, 0.5)
+ClassicTimebomb0.Parent = game.Players.LocalPlayer.Backpack
+
+Handle1 = Instance.new("Part")
+Handle1.Name = "Handle"
+Handle1.Parent = ClassicTimebomb0
+Handle1.CFrame = CFrame.new(-86.06884, 7.79828405, 15.8532553, 0.844820738, 0.000426046056, -0.53504926, 9.54987822e-09, 0.999999762, 0.000796289067, 0.535049438, -0.000672726717, 0.844820499)
+Handle1.Orientation = Vector3.new(-0.04600000008940697, -32.34700012207031, 0)
+Handle1.Position = Vector3.new(-86.06884002685547, 7.79828405380249, 15.853255271911621)
+Handle1.Rotation = Vector3.new(-0.05400000140070915, -32.34700012207031, -0.028999999165534973)
+Handle1.Color = Color3.new(0, 0.560784, 0.611765)
+Handle1.Size = Vector3.new(1, 1.2000000476837158, 1)
+Handle1.BrickColor = BrickColor.new("Bright bluish green")
+Handle1.Locked = true
+Handle1.brickColor = BrickColor.new("Bright bluish green")
+
+Mesh2 = Instance.new("SpecialMesh")
+Mesh2.Parent = Handle1
+Mesh2.MeshId = "http://www.roblox.com/asset/?id=25921854"
+Mesh2.Scale = Vector3.new(2.200000047683716, 2.200000047683716, 2.200000047683716)
+Mesh2.TextureId = "http://www.roblox.com/asset/?id=34390069"
+Mesh2.MeshType = Enum.MeshType.FileMesh
+
+RightGripAttachment3 = Instance.new("Attachment")
+RightGripAttachment3.Name = "RightGripAttachment"
+RightGripAttachment3.Parent = Handle1
+RightGripAttachment3.Axis = Vector3.new(0, 0, 1)
+RightGripAttachment3.CFrame = CFrame.new(0, 0, 0.5, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+RightGripAttachment3.Orientation = Vector3.new(-0, -90, 0)
+RightGripAttachment3.Position = Vector3.new(0, 0, 0.5)
+RightGripAttachment3.Rotation = Vector3.new(-0, -90, 0)
+RightGripAttachment3.WorldAxis = Vector3.new(-0.5350492596626282, 0.0007962890667840838, 0.844820499420166)
+RightGripAttachment3.WorldCFrame = CFrame.new(-86.3363647, 7.79868221, 16.2756653, -0.53504926, 0.000426046056, -0.844820738, 0.000796289067, 0.999999762, -9.54987822e-09, 0.844820499, -0.000672726717, -0.535049438)
+RightGripAttachment3.WorldOrientation = Vector3.new(5.436136802927649e-07, -122.34725952148438, 0.04562400281429291)
+RightGripAttachment3.WorldPosition = Vector3.new(-86.33636474609375, 7.79868221282959, 16.275665283203125)
+RightGripAttachment3.WorldSecondaryAxis = Vector3.new(0.0004260460555087775, 0.9999997615814209, -0.0006727267173118889)
+PlantBomb3 = Instance.new("Script")
+PlantBomb3.Name = "PlantBomb"
+PlantBomb3.Parent = ClassicTimebomb0
+table.insert(cors,sandbox(PlantBomb3,function()
+local bombScript = script.Parent.Bomb
+local Tool = script.Parent
+local Bomb = Tool.Handle
+
+function plant()
+	local bomb2 = Instance.new("Part")
+   
+	local vCharacter = Tool.Parent
+	local vPlayer = game.Players:playerFromCharacter(vCharacter)
+
+	local spawnPos = Bomb.Position
+
+	bomb2.Position = Vector3.new(spawnPos.x, spawnPos.y+3, spawnPos.z)
+	bomb2.Size = Vector3.new(0.8,0.8,0.8)
+	
+	bomb2.BrickColor = BrickColor.new(41)
+	bomb2.Shape = 0
+	bomb2.BottomSurface = 0
+	bomb2.TopSurface = 0
+	bomb2.Reflectance = 0
+	bomb2.Name = "TimeBomb"
+	bomb2.Locked = true
+
+	local creator_tag = Instance.new("ObjectValue")
+	creator_tag.Value = vPlayer
+	creator_tag.Name = "creator"
+	creator_tag.Parent = bomb2
+
+	bomb2.Parent = game.Workspace
+	local new_script = bombScript:clone()
+	new_script.Disabled = false
+	new_script.Parent = bomb2
+end
+
+
+Tool.Enabled = true
+function onActivated()
+
+	if not Tool.Enabled then
+		return
+	end
+
+	Tool.Enabled = false
+
+	local character = Tool.Parent;
+	local humanoid = character.Humanoid
+	if humanoid == nil then
+		print("Humanoid not found")
+		return 
+	end
+
+	local targetPos = humanoid.TargetPoint
+	Bomb.Transparency = 1.0
+
+	plant()
+
+	Bomb.Transparency = 0.0
+
+	Tool.Enabled = true
+end
+
+function onUnequipped()
+end
+
+
+Tool.Activated:connect(onActivated)
+Tool.Unequipped:connect(onUnequipped)
+end))
+
+Bomb4 = Instance.new("Script")
+Bomb4.Name = "Bomb"
+Bomb4.Parent = ClassicTimebomb0
+Bomb4.Enabled = false
+table.insert(cors,sandbox(Bomb4,function()
+local updateInterval = .4
+
+local currentColor = 1
+local colors = {26, 21} 
+
+local ticksound = Instance.new("Sound")
+ticksound.SoundId = "rbxasset://sounds\\clickfast.wav"
+ticksound.Parent = script.Parent
+
+
+
+function blowUp()
+	local sound = Instance.new("Sound")
+		sound.SoundId = "rbxasset://sounds\\Rocket shot.wav"
+		sound.Parent = script.Parent
+		sound.Volume = 1
+		sound:play()
+	explosion = Instance.new("Explosion")
+	explosion.BlastRadius = 12
+	explosion.BlastPressure = 1000000 -- these are really wussy units
+
+	-- find instigator tag
+
+
+	explosion.Position = script.Parent.Position
+	explosion.Parent = game.Workspace
+	script.Parent.Transparency = 1
+end
+
+
+while updateInterval > .1 do
+	wait(updateInterval)
+	update()	
+	ticksound:play()	
+end
+
+blowUp()
+wait(0.01)
+script.Parent:remove()
+
+end))
+Bomb4.Disabled = true
+
+MouseIcon5 = Instance.new("LocalScript")
+MouseIcon5.Name = "MouseIcon"
+MouseIcon5.Parent = ClassicTimebomb0
+table.insert(cors,sandbox(MouseIcon5,function()
+local MOUSE_ICON = 'rbxasset://textures/GunCursor.png'
+local RELOADING_ICON = 'rbxasset://textures/GunWaitCursor.png'
+
+local Tool = script.Parent
+
+local Mouse = nil
+
+local function UpdateIcon()
+	if Mouse then
+		Mouse.Icon = Tool.Enabled and MOUSE_ICON or RELOADING_ICON
+	end
+end
+
+local function OnEquipped(mouse)
+	Mouse = mouse
+	UpdateIcon()
+end
+
+local function OnChanged(property)
+	if property == 'Enabled' then
+		UpdateIcon()
+	end
+end
+
+Tool.Equipped:connect(OnEquipped)
+Tool.Changed:connect(OnChanged)
+
+end))
+
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
