@@ -1,0 +1,431 @@
+
+-- Created with iiX0Lord's ITS
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+
+AA120 = Instance.new("Tool")
+AA120.Name = "AA12"
+AA120.Parent = game.Players.LocalPlayer.Backpack
+
+Handle1 = Instance.new("Part")
+Handle1.Name = "Handle"
+Handle1.Parent = AA120
+Handle1.CFrame = CFrame.new(13665.3701, -74555.1094, -88894.5703, -6.60592787e-06, 0.944607437, 0.328225613, -0.729792953, 0.224405527, -0.645789623, -0.683676004, -0.239532769, 0.689351797)
+Handle1.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+Handle1.Position = Vector3.new(13664.83701171875, -74555.109375, -88894.8703125)
+Handle1.Rotation = Vector3.new(-140.13100051879883, -18.160999298095703, -90)
+Handle1.Transparency = 1
+Handle1.Size = Vector3.new(1, 1, 1)
+
+AimPart2 = Instance.new("Part")
+AimPart2.Name = "AimPart"
+AimPart2.Parent = AA120
+AimPart2.CFrame = CFrame.new(13665.6582, -74553.8516, -88895.9375, 8.25757616e-06, 0.944609582, -0.328225255, 0.729794025, 0.224406943, 0.645787776, 0.68367672, -0.239531875, -0.689350367)
+AimPart2.Orientation = Vector3.new(-40.224998474121094, -154.53900146484375, 72.90799713134766)
+AimPart2.Position = Vector3.new(13665.658203125, -74553.8515625, -88895.9375)
+AimPart2.Rotation = Vector3.new(-136.86900329589844, -19.160999298095703, -90)
+AimPart2.Color = Color3.new(1, 1, 0)
+AimPart2.Transparency = 1
+AimPart2.Size = Vector3.new(0.2652951180934906, 0.2652951180934906, 0.2652951180934906)
+AimPart2.BottomSurface = Enum.SurfaceType.Smooth
+AimPart2.BrickColor = BrickColor.new("New Yeller")
+AimPart2.CanCollide = false
+AimPart2.Material = Enum.Material.SmoothPlastic
+AimPart2.TopSurface = Enum.SurfaceType.Smooth
+AimPart2.brickColor = BrickColor.new("New Yeller")
+AimPart2.FormFactor = Enum.FormFactor.Custom
+AimPart2.formFactor = Enum.FormFactor.Custom
+
+Mesh3 = Instance.new("BlockMesh")
+Mesh3.Parent = AimPart2
+Mesh3.Offset = Vector3.new(0, 0, 1.5)
+Mesh3.Scale = Vector3.new(0.019999999552965164, 0.019999999552965164, 20)
+
+Mesh4 = Instance.new("BlockMesh")
+Mesh4.Parent = AimPart2
+Mesh4.Scale = Vector3.new(0.009999999776482582, 0.009999999776482582, 1000)
+
+WeldConstraint5 = Instance.new("WeldConstraint")
+WeldConstraint5.Parent = AimPart2
+WeldConstraint5.Part0 = Handle1
+WeldConstraint5.Part1 = AimPart2
+
+Trigger6 = Instance.new("Part")
+Trigger6.Name = "Trigger"
+Trigger6.Parent = AA120
+Trigger6.CFrame = CFrame.new(13665.1895, -74554.8359, -88894.8984, 8.25757616e-06, 0.944609582, -0.328225255, 0.729794025, 0.224406943, 0.645787776, 0.68367672, -0.239531875, -0.689350367)
+Trigger6.Orientation = Vector3.new(-40.224998474121094, -154.53900146484375, 72.90799713134766)
+Trigger6.Position = Vector3.new(13665.189453125, -74554.8359375, -88894.8984375)
+Trigger6.Rotation = Vector3.new(-136.86900329589844, -19.160999298095703, -90)
+Trigger6.Color = Color3.new(1, 1, 0)
+Trigger6.Transparency = 1
+Trigger6.Size = Vector3.new(0.2652951180934906, 0.2652951180934906, 0.2652951180934906)
+Trigger6.BottomSurface = Enum.SurfaceType.Smooth
+Trigger6.BrickColor = BrickColor.new("New Yeller")
+Trigger6.CanCollide = false
+Trigger6.Material = Enum.Material.SmoothPlastic
+Trigger6.TopSurface = Enum.SurfaceType.Smooth
+Trigger6.brickColor = BrickColor.new("New Yeller")
+Trigger6.FormFactor = Enum.FormFactor.Custom
+Trigger6.formFactor = Enum.FormFactor.Custom
+
+
+TriggertohandleStrongjoint10 = Instance.new("ManualWeld")
+TriggertohandleStrongjoint10.Name = "Triggertohandle Strongjoint"
+TriggertohandleStrongjoint10.Parent = Trigger9
+TriggertohandleStrongjoint10.C0 = CFrame.new(0.132647559, -0.132647559, -0.132647559, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+TriggertohandleStrongjoint10.C1 = CFrame.new(0.154998779, -0.0309427977, 0.156278014, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+TriggertohandleStrongjoint10.Part0 = Trigger9
+
+WeldConstraint8 = Instance.new("WeldConstraint")
+WeldConstraint8.Parent = Trigger6
+WeldConstraint8.Part0 = Handle1
+WeldConstraint8.Part1 = Trigger6
+
+MeshPart9 = Instance.new("Part")
+MeshPart9.Name = "MeshPart"
+MeshPart9.Parent = AA120
+MeshPart9.CFrame = CFrame.new(13664.7627, -74554.5234, -88895.1641, -9.89944147e-06, 0.944611669, 0.328224868, -0.729795158, 0.224408314, -0.645785987, -0.683677495, -0.239530966, 0.689348936)
+MeshPart9.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+MeshPart9.Position = Vector3.new(13664.7626953125, -74554.5234375, -88895.1640625)
+MeshPart9.Rotation = Vector3.new(43.13100051879883, 19.160999298095703, -90.0009994506836)
+MeshPart9.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+MeshPart9.Size = Vector3.new(0.26993879675865173, 1.2555809020996094, 3.007654905319214)
+MeshPart9.BrickColor = BrickColor.new("Really black")
+MeshPart9.brickColor = BrickColor.new("Really black")
+
+Mesh10 = Instance.new("SpecialMesh")
+Mesh10.Parent = MeshPart9
+Mesh10.MeshId = "rbxassetid://3120971372"
+Mesh10.Scale = Vector3.new(1.326475739479065, 1.326475739479065, 1.326475739479065)
+Mesh10.MeshType = Enum.MeshType.FileMesh
+
+WeldConstraint11 = Instance.new("WeldConstraint")
+WeldConstraint11.Parent = MeshPart9
+WeldConstraint11.Part0 = Handle1
+WeldConstraint11.Part1 = MeshPart9
+
+MeshPart12 = Instance.new("Part")
+MeshPart12.Name = "MeshPart"
+MeshPart12.Parent = AA120
+MeshPart12.CFrame = CFrame.new(13664.792, -74554.0469, -88895.6797, -9.89944147e-06, 0.944611669, 0.328224868, -0.729795158, 0.224408314, -0.645785987, -0.683677495, -0.239530966, 0.689348936)
+MeshPart12.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+MeshPart12.Position = Vector3.new(13664.7919921875, -74554.046875, -88895.6796875)
+MeshPart12.Rotation = Vector3.new(43.13100051879883, 19.160999298095703, -90.0009994506836)
+MeshPart12.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+MeshPart12.Size = Vector3.new(0.25176292657852173, 1.2496432065963745, 1.812761902809143)
+MeshPart12.BrickColor = BrickColor.new("Really black")
+MeshPart12.brickColor = BrickColor.new("Really black")
+
+Mesh13 = Instance.new("SpecialMesh")
+Mesh13.Parent = MeshPart12
+Mesh13.MeshId = "rbxassetid://3120972853"
+Mesh13.Scale = Vector3.new(1.326475739479065, 1.326475739479065, 1.326475739479065)
+Mesh13.MeshType = Enum.MeshType.FileMesh
+
+WeldConstraint14 = Instance.new("WeldConstraint")
+WeldConstraint14.Parent = MeshPart12
+WeldConstraint14.Part0 = Handle1
+WeldConstraint14.Part1 = MeshPart12
+
+MeshPart15 = Instance.new("Part")
+MeshPart15.Name = "MeshPart"
+MeshPart15.Parent = AA120
+MeshPart15.CFrame = CFrame.new(13665.2188, -74554.9688, -88894.7188, -3.2983603e-06, 0.944603205, 0.328226358, -0.729790747, 0.224402755, -0.645793259, -0.683674514, -0.239534557, 0.689354658)
+MeshPart15.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+MeshPart15.Position = Vector3.new(13665.21875, -74554.96875, -88894.71875)
+MeshPart15.Rotation = Vector3.new(43.13100051879883, 19.160999298095703, -90)
+MeshPart15.Color = Color3.new(0.105882, 0.164706, 0.207843)
+MeshPart15.Size = Vector3.new(0.25176292657852173, 1.3784480094909668, 4.5104146003723145)
+MeshPart15.BrickColor = BrickColor.new("Black")
+MeshPart15.brickColor = BrickColor.new("Black")
+
+Mesh16 = Instance.new("SpecialMesh")
+Mesh16.Parent = MeshPart15
+Mesh16.MeshId = "rbxassetid://3120965978"
+Mesh16.Scale = Vector3.new(1.326475739479065, 1.326475739479065, 1.326475739479065)
+Mesh16.MeshType = Enum.MeshType.FileMesh
+
+WeldConstraint17 = Instance.new("WeldConstraint")
+WeldConstraint17.Parent = MeshPart15
+WeldConstraint17.Part0 = Handle1
+WeldConstraint17.Part1 = MeshPart15
+
+MagC18 = Instance.new("Part")
+MagC18.Name = "MagC"
+MagC18.Parent = AA120
+MagC18.CFrame = CFrame.new(13665.0176, -74555.2109, -88894.4141, -9.89944147e-06, 0.944611669, 0.328224868, -0.729795158, 0.224408314, -0.645785987, -0.683677495, -0.239530966, 0.689348936)
+MagC18.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+MagC18.Position = Vector3.new(13665.017578125, -74555.2109375, -88894.4140625)
+MagC18.Rotation = Vector3.new(43.13100051879883, 19.160999298095703, -90.0009994506836)
+MagC18.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+MagC18.Transparency = 1
+MagC18.Size = Vector3.new(0.24075466394424438, 1.1889904737472534, 0.5357638597488403)
+MagC18.BrickColor = BrickColor.new("Really black")
+MagC18.brickColor = BrickColor.new("Really black")
+
+Mesh19 = Instance.new("SpecialMesh")
+Mesh19.Parent = MagC18
+Mesh19.MeshId = "rbxassetid://3120970173"
+Mesh19.Scale = Vector3.new(1.326475739479065, 1.326475739479065, 1.326475739479065)
+Mesh19.MeshType = Enum.MeshType.FileMesh
+
+WeldConstraint20 = Instance.new("WeldConstraint")
+WeldConstraint20.Parent = MagC18
+WeldConstraint20.Part0 = Handle1
+WeldConstraint20.Part1 = MagC18
+
+Mesh21 = Instance.new("Part")
+Mesh21.Name = "Mesh"
+Mesh21.Parent = AA120
+Mesh21.CFrame = CFrame.new(13666.0947, -74555.2266, -88894.4453, -9.89944147e-06, 0.944611669, 0.328224868, -0.729795158, 0.224408314, -0.645785987, -0.683677495, -0.239530966, 0.689348936)
+Mesh21.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+Mesh21.Position = Vector3.new(13666.0947265625, -74555.2265625, -88894.4453125)
+Mesh21.Rotation = Vector3.new(43.13100051879883, 19.160999298095703, -90.0009994506836)
+Mesh21.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Mesh21.Size = Vector3.new(0.08754737675189972, 0.2218664139509201, 0.45272237062454224)
+Mesh21.BrickColor = BrickColor.new("Really black")
+Mesh21.brickColor = BrickColor.new("Really black")
+
+Mesh22 = Instance.new("SpecialMesh")
+Mesh22.Parent = Mesh21
+Mesh22.MeshId = "rbxassetid://3120986037"
+Mesh22.Scale = Vector3.new(1.326475739479065, 1.326475739479065, 1.326475739479065)
+Mesh22.MeshType = Enum.MeshType.FileMesh
+
+WeldConstraint23 = Instance.new("WeldConstraint")
+WeldConstraint23.Parent = Mesh21
+WeldConstraint23.Part0 = Handle1
+WeldConstraint23.Part1 = Mesh21
+
+XD24 = Instance.new("Part")
+XD24.Name = "XD"
+XD24.Parent = AA120
+XD24.CFrame = CFrame.new(13666.1719, -74555.2266, -88894.4219, -9.89944147e-06, 0.944611669, 0.328224868, -0.729795158, 0.224408314, -0.645785987, -0.683677495, -0.239530966, 0.689348936)
+XD24.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+XD24.Position = Vector3.new(13666.171875, -74555.2265625, -88894.421875)
+XD24.Rotation = Vector3.new(43.13100051879883, 19.160999298095703, -90.0009994506836)
+XD24.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+XD24.Size = Vector3.new(0.11116034537553787, 0.43361175060272217, 3.1590023040771484)
+XD24.BrickColor = BrickColor.new("Really black")
+XD24.brickColor = BrickColor.new("Really black")
+
+Mesh25 = Instance.new("SpecialMesh")
+Mesh25.Parent = XD24
+Mesh25.MeshId = "rbxassetid://3120978753"
+Mesh25.Scale = Vector3.new(1.326475739479065, 1.326475739479065, 1.326475739479065)
+Mesh25.MeshType = Enum.MeshType.FileMesh
+
+Snap26 = Instance.new("Snap")
+Snap26.Parent = XD24
+Snap26.C0 = CFrame.new(0, -0.216805875, 0, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap26.C1 = CFrame.new(-0.00246067625, 0.165702075, -0.720076501, 1, 0, 0, 0, 0, -1, 0, 1, 0)
+Snap26.Part0 = XD24
+
+WeldConstraint27 = Instance.new("WeldConstraint")
+WeldConstraint27.Parent = XD24
+WeldConstraint27.Part0 = Handle1
+WeldConstraint27.Part1 = XD24
+
+MeshPart28 = Instance.new("Part")
+MeshPart28.Name = "MeshPart"
+MeshPart28.Parent = AA120
+MeshPart28.CFrame = CFrame.new(13666.3965, -74556.4062, -88893.1562, -1.15314797e-05, 0.944607854, 0.32822448, -0.72979337, 0.224401191, -0.645790637, -0.683675468, -0.239535287, 0.689351439)
+MeshPart28.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+MeshPart28.Position = Vector3.new(13666.396484375, -74556.40625, -88893.15625)
+MeshPart28.Rotation = Vector3.new(43.13100051879883, 19.160999298095703, -90.0009994506836)
+MeshPart28.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+MeshPart28.Size = Vector3.new(0.2991204559803009, 0.426788330078125, 0.5434551239013672)
+MeshPart28.BrickColor = BrickColor.new("Really black")
+MeshPart28.brickColor = BrickColor.new("Really black")
+
+Mesh29 = Instance.new("SpecialMesh")
+Mesh29.Parent = MeshPart28
+Mesh29.MeshId = "rbxassetid://3120981045"
+Mesh29.Scale = Vector3.new(1.326475739479065, 1.326475739479065, 1.326475739479065)
+Mesh29.MeshType = Enum.MeshType.FileMesh
+
+WeldConstraint30 = Instance.new("WeldConstraint")
+WeldConstraint30.Parent = MeshPart28
+WeldConstraint30.Part0 = Handle1
+WeldConstraint30.Part1 = MeshPart28
+
+Bolt31 = Instance.new("Part")
+Bolt31.Name = "Bolt"
+Bolt31.Parent = AA120
+Bolt31.CFrame = CFrame.new(13665.6279, -74554.9844, -88894.7422, -1.15314797e-05, 0.944607854, 0.32822448, -0.72979337, 0.224401191, -0.645790637, -0.683675468, -0.239535287, 0.689351439)
+Bolt31.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+Bolt31.Position = Vector3.new(13665.6279296875, -74554.984375, -88894.7421875)
+Bolt31.Rotation = Vector3.new(43.13100051879883, 19.160999298095703, -90.0009994506836)
+Bolt31.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Bolt31.Size = Vector3.new(0.1934022158384323, 0.26993265748023987, 0.6384332776069641)
+Bolt31.BrickColor = BrickColor.new("Really black")
+Bolt31.brickColor = BrickColor.new("Really black")
+
+Mesh32 = Instance.new("SpecialMesh")
+Mesh32.Parent = Bolt31
+Mesh32.MeshId = "rbxassetid://3120987745"
+Mesh32.Scale = Vector3.new(1.326475739479065, 1.326475739479065, 1.326475739479065)
+Mesh32.MeshType = Enum.MeshType.FileMesh
+
+WeldConstraint33 = Instance.new("WeldConstraint")
+WeldConstraint33.Parent = Bolt31
+WeldConstraint33.Part0 = Handle1
+WeldConstraint33.Part1 = Bolt31
+
+BoltBack34 = Instance.new("Part")
+BoltBack34.Name = "BoltBack"
+BoltBack34.Parent = AA120
+BoltBack34.CFrame = CFrame.new(13665.4258, -74554.6094, -88895.1016, -1.15314797e-05, 0.944607854, 0.32822448, -0.72979337, 0.224401191, -0.645790637, -0.683675468, -0.239535287, 0.689351439)
+BoltBack34.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+BoltBack34.Position = Vector3.new(13665.42578125, -74554.609375, -88895.1015625)
+BoltBack34.Rotation = Vector3.new(43.13100051879883, 19.160999298095703, -90.0009994506836)
+BoltBack34.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+BoltBack34.Transparency = 1
+BoltBack34.Size = Vector3.new(0.1934022158384323, 0.26993265748023987, 0.6384332776069641)
+BoltBack34.BrickColor = BrickColor.new("Really black")
+BoltBack34.brickColor = BrickColor.new("Really black")
+
+Mesh35 = Instance.new("SpecialMesh")
+Mesh35.Parent = BoltBack34
+Mesh35.MeshId = "rbxassetid://3120987745"
+Mesh35.Scale = Vector3.new(1.326475739479065, 1.326475739479065, 1.326475739479065)
+Mesh35.MeshType = Enum.MeshType.FileMesh
+
+WeldConstraint36 = Instance.new("WeldConstraint")
+WeldConstraint36.Parent = BoltBack34
+WeldConstraint36.Part0 = Handle1
+WeldConstraint36.Part1 = BoltBack34
+
+Mag37 = Instance.new("Part")
+Mag37.Name = "Mag"
+Mag37.Parent = AA120
+Mag37.CFrame = CFrame.new(13664.9463, -74555.2109, -88894.4141, -1.15314797e-05, 0.944607854, 0.32822448, -0.72979337, 0.224401191, -0.645790637, -0.683675468, -0.239535287, 0.689351439)
+Mag37.Orientation = Vector3.new(40.224998474121094, 25.461000442504883, -72.90799713134766)
+Mag37.Position = Vector3.new(13664.9462890625, -74555.2109375, -88894.4140625)
+Mag37.Rotation = Vector3.new(43.13100051879883, 19.160999298095703, -90.0009994506836)
+Mag37.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Mag37.Size = Vector3.new(0.7845174074172974, 0.8593221306800842, 0.3648931086063385)
+Mag37.BrickColor = BrickColor.new("Really black")
+Mag37.brickColor = BrickColor.new("Really black")
+
+Mesh38 = Instance.new("SpecialMesh")
+Mesh38.Parent = Mag37
+Mesh38.MeshId = "rbxassetid://3120968022"
+Mesh38.Scale = Vector3.new(1.3263108730316162, 1.3263108730316162, 1.3263108730316162)
+Mesh38.MeshType = Enum.MeshType.FileMesh
+
+WeldConstraint39 = Instance.new("WeldConstraint")
+WeldConstraint39.Parent = Mag37
+WeldConstraint39.Part0 = Handle1
+WeldConstraint39.Part1 = Mag37
+
+Settings40 = Instance.new("Folder")
+Settings40.Name = "Settings"
+Settings40.Parent = AA120
+
+Recoil41 = Instance.new("IntValue")
+Recoil41.Name = "Recoil"
+Recoil41.Parent = Settings40
+Recoil41.Value = 1
+
+StoredAmmo42 = Instance.new("IntValue")
+StoredAmmo42.Name = "StoredAmmo"
+StoredAmmo42.Parent = Settings40
+StoredAmmo42.Value = 21
+
+Mag43 = Instance.new("IntValue")
+Mag43.Name = "Mag"
+Mag43.Parent = Settings40
+Mag43.Value = 21
+
+Auto44 = Instance.new("BoolValue")
+Auto44.Name = "Auto"
+Auto44.Parent = Settings40
+
+FireRate45 = Instance.new("NumberValue")
+FireRate45.Name = "FireRate"
+FireRate45.Parent = Settings40
+FireRate45.Value = 0.2
+
+FireMode46 = Instance.new("IntValue")
+FireMode46.Name = "FireMode"
+FireMode46.Parent = Settings40
+FireMode46.Value = 1
+
+CanSelectFire47 = Instance.new("BoolValue")
+CanSelectFire47.Name = "CanSelectFire"
+CanSelectFire47.Parent = Settings40
+
+ShotCount48 = Instance.new("IntValue")
+ShotCount48.Name = "ShotCount"
+ShotCount48.Parent = Settings40
+ShotCount48.Value = 14
+
+AimZoom49 = Instance.new("IntValue")
+AimZoom49.Name = "AimZoom"
+AimZoom49.Parent = Settings40
+AimZoom49.Value = 35
+
+Drop50 = Instance.new("IntValue")
+Drop50.Name = "Drop"
+Drop50.Parent = Settings40
+Drop50.Value = 135
+
+CycleZoom51 = Instance.new("IntValue")
+CycleZoom51.Name = "CycleZoom"
+CycleZoom51.Parent = Settings40
+CycleZoom51.Value = 50
+
+RifleOrPistol52 = Instance.new("StringValue")
+RifleOrPistol52.Name = "RifleOrPistol"
+RifleOrPistol52.Parent = Settings40
+
+IsGun53 = Instance.new("BoolValue")
+IsGun53.Name = "IsGun"
+IsGun53.Parent = Settings40
+IsGun53.Value = true
+
+Ammo54 = Instance.new("IntValue")
+Ammo54.Name = "Ammo"
+Ammo54.Parent = Settings40
+Ammo54.Value = 21
+
+Rarity55 = Instance.new("StringValue")
+Rarity55.Name = "Rarity"
+Rarity55.Parent = Settings40
+Rarity55.Value = "godly"
+
+Dismember56 = Instance.new("BoolValue")
+Dismember56.Name = "Dismember"
+Dismember56.Parent = Settings40
+Dismember56.Value = true
+
+AmmoType57 = Instance.new("StringValue")
+AmmoType57.Name = "AmmoType"
+AmmoType57.Parent = Settings40
+AmmoType57.Value = "shotgun"
+
+WeldConstraint58 = Instance.new("WeldConstraint")
+WeldConstraint58.Parent = Settings40
+WeldConstraint58.Part0 = Handle1
+
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
