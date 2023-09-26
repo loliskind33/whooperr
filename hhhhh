@@ -1,0 +1,301 @@
+
+-- Created with iiX0Lord's ITS
+
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+
+Vacuum0 = Instance.new("Tool")
+Vacuum0.Name = "Vacuum"
+Vacuum0.Parent = game.Players.LocalPlayer.Backpack
+Vacuum0.TextureId = "http://www.roblox.com/asset/?id=84394194 "
+Vacuum0.Grip = CFrame.new(-1.5, -0.800000012, -2.70000005, -1, 0, 0, 0, -1, 2.18556949e-07, 0, 2.18556949e-07, 1)
+Vacuum0.GripForward = Vector3.new(-0, -2.18556948539117e-07, -1)
+Vacuum0.GripPos = Vector3.new(-1.5, -0.800000011920929, -2.700000047683716)
+Vacuum0.GripRight = Vector3.new(-1, 0, 0)
+Vacuum0.GripUp = Vector3.new(0, -1, 2.18556948539117e-07)
+
+SoundScript1 = Instance.new("Script")
+SoundScript1.Name = "SoundScript"
+SoundScript1.Parent = Vacuum0
+table.insert(cors,sandbox(SoundScript1,function()
+--Stickmasterluke
+
+
+sp=script.Parent
+handle=sp.Handle
+
+
+script.ChildAdded:connect(function(item)
+	if item~=nil then
+		local s=handle:FindFirstChild(item.Name)
+		if s~=nil then
+			s:Play()
+		end
+		item:remove()
+	end
+end)
+
+
+end))
+
+Handle2 = Instance.new("Part")
+Handle2.Name = "Handle"
+Handle2.Parent = Vacuum0
+Handle2.CFrame = CFrame.new(-0.0999984741, 3.50000024, -0.5, -1, -0, 0, -0, -1, 0, -0, -0, 1)
+Handle2.Orientation = Vector3.new(0, 0, 180)
+Handle2.Position = Vector3.new(-0.09999847412109375, 3.500000238418579, -0.5)
+Handle2.Rotation = Vector3.new(0, 0, 180)
+Handle2.Color = Color3.new(0.94902, 0.952941, 0.952941)
+Handle2.Size = Vector3.new(1.7999999523162842, 2.5, 1)
+Handle2.BottomSurface = Enum.SurfaceType.Smooth
+Handle2.BrickColor = BrickColor.new("White")
+Handle2.Locked = true
+Handle2.Reflectance = 0.4000000059604645
+Handle2.TopSurface = Enum.SurfaceType.Smooth
+Handle2.brickColor = BrickColor.new("White")
+Handle2.FormFactor = Enum.FormFactor.Custom
+Handle2.formFactor = Enum.FormFactor.Custom
+
+Mesh3 = Instance.new("SpecialMesh")
+Mesh3.Parent = Handle2
+Mesh3.MeshId = "http://www.roblox.com/asset/?id=84313478 "
+Mesh3.Scale = Vector3.new(1.5, 1.5, 1.5)
+Mesh3.TextureId = "http://www.roblox.com/asset/?id=84313638 "
+Mesh3.MeshType = Enum.MeshType.FileMesh
+
+HosePart4 = Instance.new("Part")
+HosePart4.Name = "HosePart"
+HosePart4.Parent = Handle2
+HosePart4.CFrame = CFrame.new(1.75910091, 4.5313549, -1.08508193, -0.999999523, 5.96046235e-08, 0, 0, 5.96046341e-08, -0.999999702, -5.96046164e-08, -0.999999523, -5.96046164e-08)
+HosePart4.Orientation = Vector3.new(90, 180, 0)
+HosePart4.Position = Vector3.new(1.7591009140014648, 4.531354904174805, -1.085081934928894)
+HosePart4.Rotation = Vector3.new(90, 0, 180)
+HosePart4.Color = Color3.new(0.501961, 0.733333, 0.858824)
+HosePart4.Size = Vector3.new(0.20000000298023224, 0.20000000298023224, 0.20000000298023224)
+HosePart4.BrickColor = BrickColor.new("Pastel Blue")
+HosePart4.Locked = true
+HosePart4.brickColor = BrickColor.new("Pastel Blue")
+HosePart4.FormFactor = Enum.FormFactor.Custom
+HosePart4.formFactor = Enum.FormFactor.Custom
+
+Mesh5 = Instance.new("SpecialMesh")
+Mesh5.Parent = HosePart4
+Mesh5.MeshId = "http://www.roblox.com/asset/?id=84313555 "
+Mesh5.Scale = Vector3.new(1.5, 1.5, 1.5)
+Mesh5.TextureId = "http://www.roblox.com/asset/?id=84313638 "
+Mesh5.MeshType = Enum.MeshType.FileMesh
+
+HoseSound6 = Instance.new("Sound")
+HoseSound6.Name = "HoseSound"
+HoseSound6.Parent = Handle2
+HoseSound6.SoundId = "http://www.roblox.com/asset/?id=81699764"
+HoseSound6.Volume = 0.699999988079071
+
+Motor7 = Instance.new("Motor")
+Motor7.Parent = Handle2
+Motor7.MaxVelocity = 0.05000000074505806
+Motor7.C0 = CFrame.new(0, 0, 0, -0.999999881, 0, 0, 0, -0.99999994, 0, 0, 0, 0.999999881)
+Motor7.C1 = CFrame.new(1.85910034, -0.585082412, 1.0313549, -0.999999642, 0, -5.96046235e-08, 5.96046306e-08, 5.96046377e-08, -0.999999642, 0, -0.999999762, -5.96046235e-08)
+Motor7.Part0 = Handle2
+Motor7.Part1 = HosePart4
+Motor7.part1 = HosePart4
+
+LocalScript8 = Instance.new("LocalScript")
+LocalScript8.Parent = Vacuum0
+table.insert(cors,sandbox(LocalScript8,function()
+--Stickmasterluke
+--Altered by QuantumSama
+
+
+local Tool=script.Parent
+local Backpack = Tool.Handle
+
+rate=1/30
+
+equipped=false
+check=true
+debris=game:GetService("Debris")
+
+
+while Tool.Handle:FindFirstChild("Motor")==nil do 
+	wait()
+end
+local storeWeld=Tool.Handle.Motor
+
+local HoseSound  
+
+
+function playsound(soundname)
+	if soundname and Tool:FindFirstChild("SoundScript")~=nil then
+		local soundtag=Instance.new("StringValue")
+		soundtag.Name=soundname
+		soundtag.Parent=Tool.SoundScript
+	end
+end
+
+function setwelds()
+	if storeWeld then
+		storeWeld.Parent=Tool.Handle
+	end
+	if equipped then
+		local ra=Tool.Parent:FindFirstChild("Right Arm")
+		local t=Tool.Parent:FindFirstChild("Torso")
+		if ra~=nil and t~=nil then
+			local rightgrip=ra:FindFirstChild("RightGrip")
+			if rightgrip~=nil then
+				rightgrip.Part0=t
+				rightgrip.C0=CFrame.new(0,0,1)*CFrame.Angles(0,0,math.pi)
+				rightgrip.C1=CFrame.new(0,0,0)
+			end
+		end
+	end
+end
+
+function doSuck()
+	local plr=game.Players.LocalPlayer
+	if plr~=nil then
+		local radiusVec = Vector3.new(6,6,6)
+		local handle = Tool:FindFirstChild("Handle")
+		local hose = handle:FindFirstChild("HosePart")
+		local hoseCFrame = hose.CFrame*CFrame.Angles(math.pi/2,0,0)
+		local hoseTarget = hoseCFrame + hoseCFrame.lookVector*9
+		local suckTarget = hoseCFrame + hoseCFrame.lookVector*3
+		local suckPart = Instance.new("Part")
+		suckPart.CanCollide = false
+		suckPart.FormFactor = "Custom"
+		--suckPart.Shape = "Ball"
+		suckPart.Size = Vector3.new(.2,.2,.2)
+		suckPart.CFrame = hoseTarget + Vector3.new((math.random()-.5)*10,(math.random()-.5)*10,(math.random()-.5)*10)
+		suckPart2 = suckPart:Clone()
+		suckPart2.CFrame = hoseTarget + Vector3.new((math.random()-.5)*10,(math.random()-.5)*10,(math.random()-.5)*10)
+		debris:AddItem(suckPart,3)
+		debris:AddItem(suckPart2,3)
+		suckPart.Parent = game.Workspace
+		suckPart2.Parent = game.Workspace
+
+		local suckRegion = Region3.new(hoseTarget.p - radiusVec, hoseTarget.p + radiusVec)
+
+		local suckableParts = game.Workspace:FindPartsInRegion3(suckRegion, Tool.Parent,50)
+
+		local limbChance = .075
+		for i,v in pairs(suckableParts) do
+			if v and v.Parent and v:IsA("BasePart") and not v:IsA("Terrain") and v:getMass() < 40 and not v:FindFirstChild("bp") then
+				local bp = Instance.new("BodyPosition")
+				bp.Name = "bp"
+				bp.maxForce = Vector3.new(99999,99999,99999)
+				bp.D = 3000
+				bp.P = 30000
+				bp.position = suckTarget.p
+				debris:AddItem(bp,.5)
+				local hum = v.Parent:FindFirstChild("Humanoid")
+				if hum then
+					if math.random() < limbChance or hum.Health == 0 then
+						local creatorTag = Instance.new("ObjectValue")
+						creatorTag.Value = plr
+						creatorTag.Name = "creator"
+						debris:AddItem(creatorTag,.5)
+						creatorTag.Parent = hum
+
+						v:BreakJoints()
+						bp.Parent = v
+						debris:AddItem(v,.15)
+					end
+				else
+					bp.Parent = v
+					if not v.Parent:IsA("Tool") then
+						delay(0,function()
+							local pos = v.Position
+							wait(.15)
+							if (pos-v.Position).magnitude > .1 then
+								v:Destroy()
+							end
+						end)
+					end
+				end
+			end
+		end
+	end
+end
+
+function onEquipped(mouse)
+	if mouse==nil then
+		print("Mouse not found")
+		return 
+	end
+	equipped=true
+	mouse.Icon="rbxasset://textures\\GunCursor.png"
+	mouse.Button1Down:connect(function()
+		if check and equipped then			
+			check=false
+			mouse.Icon="rbxasset://textures\\GunWaitCursor.png"
+			local hum=Tool.Parent:FindFirstChild("Humanoid")
+			local torso=Tool.Parent:FindFirstChild("Torso")
+			--local rightArm=Tool.Parent:FindFirstChild("Right Arm")
+			if torso and hum then
+				if hum.Health>0 then
+					HoseSound = Backpack:FindFirstChild("HoseSound")
+					if HoseSound then HoseSound:Play() end 
+					--theanim:Play()
+					playsound("Spray")
+					if storeWeld then
+						storeWeld.DesiredAngle=-.5
+					end
+					local frames = 25
+					for i = 1, frames do
+						if not equipped then break end
+						doSuck()
+						wait(.2)
+					end
+					if storeWeld then
+						storeWeld.DesiredAngle=0
+					end
+					wait(0.01)
+				end
+			end
+			mouse.Icon="rbxasset://textures\\GunCursor.png"
+			check=true
+		end
+	end)
+	setwelds()
+end
+
+function onUnequipped()
+	equipped=false
+	if HoseSound then HoseSound:Stop() end 
+end
+
+
+Tool.Equipped:connect(onEquipped)
+Tool.Unequipped:connect(onUnequipped)
+setwelds()
+
+
+
+end))
+
+ThumbnailCamera9 = Instance.new("Camera")
+ThumbnailCamera9.Name = "ThumbnailCamera"
+ThumbnailCamera9.Parent = Vacuum0
+ThumbnailCamera9.CFrame = CFrame.new(1.01015282, 4.17695284, 2.4850738, 0.937280715, -0.0724726766, 0.340958297, -0, 0.978147805, 0.207911015, -0.348575443, -0.194870979, 0.916799068)
+ThumbnailCamera9.CoordinateFrame = CFrame.new(1.01015282, 4.17695284, 2.4850738, 0.937280715, -0.0724726766, 0.340958297, -0, 0.978147805, 0.207911015, -0.348575443, -0.194870979, 0.916799068)
+ThumbnailCamera9.Focus = CFrame.new(-0.0999984741, 3.5, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+ThumbnailCamera9.focus = CFrame.new(-0.0999984741, 3.5, -0.5, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
