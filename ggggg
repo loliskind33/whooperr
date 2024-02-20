@@ -1,6 +1,4 @@
 
--- Created with iiX0Lord's ITS
-
 function sandbox(var,func)
 	local env = getfenv(func)
 	local newenv = setmetatable({},{
